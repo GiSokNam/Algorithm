@@ -9,9 +9,11 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
-	int c = Integer.parseInt(st.nextToken());
-	if (a == b && a == c) {
-            System.out.println(10000 + a * 1000);
+	    int c = Integer.parseInt(st.nextToken());
+        br.close();
+	
+	    if (a == b && a == c) {
+                System.out.println(10000 + a * 1000);
         } else if (a == b) {
             System.out.println(1000 + a * 100);
         } else if (a == c) {
@@ -21,5 +23,6 @@ public class Main {
         } else {
             System.out.println(Math.max(a, Math.max(b,c)) * 100);
         }
+         
     }
 }
