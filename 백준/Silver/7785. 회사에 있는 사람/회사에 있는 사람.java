@@ -1,31 +1,37 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+        HashMap<String, String> input = new HashMap<>();
 
-		int n = sc.nextInt();
-		HashMap<String, String> map = new HashMap<String, String>();
+        StringTokenizer st;
+        for (int i = 0; i < N; i++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            String name = st.nextToken();
+            String state = st.nextToken();
+            if (input.containsKey(name)) {
+                input.remove(name);
+            } else {
+                input.put(name, state);
+            }
+        }
+        br.close();
 
-		for (int i = 0; i < n; i++) {
-			String name = sc.next();
-			String state = sc.next();
+        ArrayList<String> list = new ArrayList<String>(input.keySet());
+        Collections.sort(list, Collections.reverseOrder());
 
-			if (map.containsKey(name)) {
-				map.remove(name);
-			} else {
-				map.put(name, state);
-			}
-		}
-
-		ArrayList<String> list = new ArrayList<String>(map.keySet());
-		Collections.sort(list, Collections.reverseOrder());
-		
-		for(var li : list) {
-			System.out.print(li + " ");
-		}
-	}
+        for (String str : list) {
+            bw.write(str);
+            bw.newLine();
+        }
+        bw.flush();
+        bw.close();
+    }
 }
