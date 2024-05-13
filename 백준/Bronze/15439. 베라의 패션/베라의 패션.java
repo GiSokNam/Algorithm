@@ -7,13 +7,7 @@ public class Main {
 
         int N = Integer.parseInt(br.readLine());
         br.close();
-        int cnt = 0;
-
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                if(i != j) cnt++;
-            }
-        }
+        int cnt = N * (N - 1);
         bw.write(cnt + "");
         bw.flush();
         bw.close();
