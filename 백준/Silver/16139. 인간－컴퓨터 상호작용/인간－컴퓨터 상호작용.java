@@ -8,23 +8,27 @@ public class Main {
 
         String S = br.readLine();
         int I = Integer.parseInt(br.readLine());
-        char[] c = S.toCharArray();
+        int[][] alpha = new int[S.length() + 1][26];
+
+        for (int i = 1; i <= S.length(); i++) {
+            int search = S.charAt(i - 1) - 'a';
+
+            for (int j = 0; j < 26; j++) {
+                int beforeCharValue = alpha[i - 1][j];
+                alpha[i][j] = (j == search ? beforeCharValue + 1 : beforeCharValue);
+            }
+        }
 
         StringTokenizer st;
         for (int i = 0; i < I; i++) {
             st = new StringTokenizer(br.readLine(), " ");
-            String searchStr = st.nextToken();
-            int rangeMin = Integer.parseInt(st.nextToken());
-            int rangeMax = Integer.parseInt(st.nextToken());
 
-            int cnt = 0;
-            for (int j = rangeMin; j <= rangeMax; j++) {
-                String comparisonStr = String.valueOf(c[j]);
-                if (searchStr.equals(comparisonStr)) {
-                    cnt++;
-                }
-            }
-            bw.write(cnt + "");
+            int find = st.nextToken().charAt(0) - 'a';
+            int start = Integer.parseInt(st.nextToken()) + 1;
+            int end = Integer.parseInt(st.nextToken()) + 1;
+
+            int result = alpha[end][find] - alpha[start - 1][find];
+            bw.write(result + "");
             bw.newLine();
         }
         br.close();
