@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         double[] score = new double[N];
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
@@ -19,8 +19,7 @@ public class Main {
            sum += ((score[i] / score[score.length -1]) * 100);
         }
         double avg = sum / N;
-        bw.write(avg+"");
-        bw.flush();
-        bw.close();
+        sb.append(avg);
+        System.out.print(sb);
     }
 }
