@@ -3,7 +3,6 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
         int[] a = new int[N];
         String s = br.readLine();
@@ -15,8 +14,6 @@ public class Main {
         for (int i : a) {
             sum += i;
         }
-        bw.write(sum +"");
-        bw.flush();
-        bw.close();
+        System.out.print(sum);
     }
 }
