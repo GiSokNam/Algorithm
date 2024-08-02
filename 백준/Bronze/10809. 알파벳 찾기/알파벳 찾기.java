@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         String str = br.readLine();
         br.close();
         int[] arr = new int[26];
@@ -19,9 +19,8 @@ public class Main {
         }
 
         for (int i : arr) {
-            bw.write(i + " ");
+            sb.append(i + " ");
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
