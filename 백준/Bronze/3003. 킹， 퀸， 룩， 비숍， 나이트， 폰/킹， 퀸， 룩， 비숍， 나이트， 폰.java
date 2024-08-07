@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         int[] check = new int[] {1,1,2,2,2,8};
         int[] input = new int[6];
@@ -13,9 +13,8 @@ public class Main {
             check[i] = check[i] - input[i];
         }
         for (int i : check) {
-            bw.write(i + " ");
+            sb.append(i + " ");
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
