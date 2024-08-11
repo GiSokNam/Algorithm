@@ -52,8 +52,7 @@ public class Main {
             }
         }
         br.close();
-        double avg2 = sum/sum2;
-        System.out.printf("%.6f",avg2);
-
+        double avg2 = sum / sum2;
+        System.out.printf("%.6f", avg2);
     }
 }
