@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
         int[][] arr = new int[9][9];
@@ -27,10 +27,8 @@ public class Main {
         }
         br.close();
 
-        bw.write(max +"");
-        bw.newLine();
-        bw.write(row +" " +col);
-        bw.flush();
-        bw.close();
+        sb.append(max + "\n");
+        sb.append(row + " " + col);
+        System.out.print(sb);
     }
 }
