@@ -14,7 +14,7 @@ public class Main {
 
         int result = 0;
         int idx = 0;
-        int num = 0;
+        int num;
         char c;
         for (int i = N.length() - 1; i >= 0; i--) {
             c = N.charAt(i);
