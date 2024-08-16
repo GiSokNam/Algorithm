@@ -1,4 +1,6 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -22,6 +24,7 @@ public class Main {
             }
         }
         br.close();
+
         int sum = 0;
         for (int i = 0; i < paper.length; i++) {
             for (int j = 0; j < paper.length; j++) {
@@ -31,6 +34,5 @@ public class Main {
             }
         }
         System.out.println(sum);
-
     }
 }
