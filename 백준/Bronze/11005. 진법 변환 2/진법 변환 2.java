@@ -5,12 +5,13 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
         int N = Integer.parseInt(st.nextToken());
         int B = Integer.parseInt(st.nextToken());
         br.close();
+
         ArrayList<Character> list = new ArrayList<>();
         char c;
         while (N > 0) {
@@ -25,10 +26,8 @@ public class Main {
         }
 
         for (int i = list.size() - 1; i >= 0; i--) {
-            bw.write(list.get(i)+"");
+            sb.append(list.get(i));
         }
-        bw.flush();
-        bw.close();
-
+        System.out.print(sb);
     }
 }
