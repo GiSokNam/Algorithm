@@ -3,23 +3,22 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         int count = 1;
         int range = 2;
         br.close();
-        
+
         if (N == 1) {
-            bw.write(count+"");
+            sb.append(count);
         } else {
             while (range <= N) {
                 range += 6 * count;
                 count++;
             }
-            bw.write(count+"");
+            sb.append(count);
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
