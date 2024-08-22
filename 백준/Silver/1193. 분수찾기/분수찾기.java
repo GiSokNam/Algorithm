@@ -3,7 +3,8 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
+
 
         int X = Integer.parseInt(br.readLine());
         br.close();
@@ -13,10 +14,10 @@ public class Main {
         while (true) {
             if (X <= numberOfDiagonalCells + sum) {
                 if (numberOfDiagonalCells % 2 == 1) {
-                    bw.write((numberOfDiagonalCells - (X - sum - 1)) + "/" + (X - sum));
+                    sb.append((numberOfDiagonalCells - (X - sum - 1)) + "/" + (X - sum));
                     break;
                 } else {
-                    bw.write((X - sum) + "/" + (numberOfDiagonalCells - (X - sum - 1)));
+                    sb.append((X - sum) + "/" + (numberOfDiagonalCells - (X - sum - 1)));
                     break;
                 }
             } else {
@@ -24,7 +25,6 @@ public class Main {
                 numberOfDiagonalCells++;
             }
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
