@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
         int a;
         int b;
@@ -15,26 +15,21 @@ public class Main {
 
             if (a < b) {
                 if (b % a == 0) {
-                    bw.write("factor");
-                    bw.newLine();
+                    sb.append("factor" + "\n");
                 } else {
-                    bw.write("neither");
-                    bw.newLine();
+                    sb.append("neither" + "\n");
                 }
             } else if(a > b) {
                 if (a % b == 0) {
-                    bw.write("multiple");
-                    bw.newLine();
+                    sb.append("multiple" + "\n");
                 } else {
-                    bw.write("neither");
-                    bw.newLine();
+                    sb.append("neither" + "\n");
                 }
             } else if (a == 0 && b == 0) {
                 break;
             }
         }
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
