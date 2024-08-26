@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int sum;
         int n;
         String result = "";
@@ -29,11 +29,9 @@ public class Main {
             if (n != sum) {
                 result = n + " is NOT perfect.";
             }
-            bw.write(result);
-            bw.newLine();
+            sb.append(result + "\n");
         }
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
