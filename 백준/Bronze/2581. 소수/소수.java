@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int M = Integer.parseInt(br.readLine());
         int N = Integer.parseInt(br.readLine());
@@ -32,13 +32,10 @@ public class Main {
         }
 
         if (sum == 0) {
-            bw.write(-1+"");
+            sb.append(-1);
         } else {
-            bw.write(sum+"");
-            bw.newLine();
-            bw.write(min+"");
+            sb.append(sum + "\n" + min);
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
