@@ -1,6 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(1);
-        System.out.print(0);
+        StringBuilder sb = new StringBuilder();
+        sb.append("1");
+        sb.append("\n");
+        sb.append("0");
+        System.out.print(sb);
     }
 }
