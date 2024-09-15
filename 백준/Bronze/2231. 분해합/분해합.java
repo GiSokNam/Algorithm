@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         String N = br.readLine();
         br.close();
@@ -26,10 +26,7 @@ public class Main {
                 minConstructor = Integer.parseInt(temp);
             }
         }
-
-        bw.write(minConstructor + "");
-        
-        bw.flush();
-        bw.close();
+        sb.append(minConstructor);
+        System.out.print(sb);
     }
 }
