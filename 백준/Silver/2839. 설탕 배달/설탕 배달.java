@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         br.close();
@@ -23,8 +23,7 @@ public class Main {
             N -= a;
             count++;
         }
-        bw.write(count + "");
-        bw.flush();
-        bw.close();
+        sb.append(count);
+        System.out.print(sb);
     }
 }
