@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int[] desc = new int[5];
 
         int sum = 0;
@@ -18,10 +18,7 @@ public class Main {
         int avg = sum / 5;
         Arrays.sort(desc);
 
-        bw.write(avg+"");
-        bw.newLine();
-        bw.write(desc[2]+"");
-        bw.flush();
-        bw.close();
+        sb.append(avg + "\n" + desc[2]);
+        System.out.print(sb);
     }
 }
