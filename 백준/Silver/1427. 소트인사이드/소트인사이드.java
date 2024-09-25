@@ -7,7 +7,6 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         String n = br.readLine();
         Long[] N = new Long[n.length()];
         br.close();
@@ -20,9 +19,6 @@ public class Main {
             temp += String.valueOf(N[i]);
         }
         sb.append(temp);
-        bw.write(sb.reverse().toString());
-        bw.flush();
-        bw.close();
-
+        System.out.print(sb.reverse());
     }
 }
