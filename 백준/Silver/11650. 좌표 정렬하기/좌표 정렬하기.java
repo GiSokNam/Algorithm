@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         int[][] arr = new int[N][2];
@@ -29,10 +29,8 @@ public class Main {
         });
 
         for (int i = 0; i < N; i++) {
-            bw.write(arr[i][0] + " " + arr[i][1]);
-            bw.newLine();
+            sb.append(arr[i][0] + " " + arr[i][1] + "\n");
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
