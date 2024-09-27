@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         String[] arr = new String[N];
@@ -31,16 +31,13 @@ public class Main {
             }
         });
 
-        bw.write(arr[0] + "");
-        bw.newLine();
+        sb.append(arr[0] + "\n");
 
         for (int i = 1; i < N; i++) {
             if (!arr[i].equals(arr[i - 1])) {
-                bw.write(arr[i] + " ");
-                bw.newLine();
+                sb.append(arr[i] + " " + "\n");
             }
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
