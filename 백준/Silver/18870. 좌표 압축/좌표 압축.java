@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         int[] origin = new int[N];
@@ -33,9 +33,8 @@ public class Main {
 
         for (int key : origin) {
             int result = rankMap.get(key);
-            bw.write(result + " ");
+            sb.append(result + " ");
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
