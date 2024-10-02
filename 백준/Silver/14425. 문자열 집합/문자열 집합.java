@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         HashMap<String, Integer> input = new HashMap<>();
 
@@ -24,10 +24,8 @@ public class Main {
             }
         }
         br.close();
-
-        bw.write(cnt + "");
-        bw.flush();
-        bw.close();
+        sb.append(cnt);
+        System.out.print(sb);
 
     }
 }
