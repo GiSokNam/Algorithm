@@ -5,7 +5,6 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         String str = br.readLine();
         br.close();
@@ -16,8 +15,6 @@ public class Main {
                 set.add(str.substring(i, j));
             }
         }
-        bw.write(set.size() + "");
-        bw.flush();
-        bw.close();
+        System.out.print(set.size());
     }
 }
