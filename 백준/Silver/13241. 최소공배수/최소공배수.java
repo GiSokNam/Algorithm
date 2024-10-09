@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         long A = Long.parseLong(st.nextToken());
@@ -12,9 +12,8 @@ public class Main {
         long gcd = GCD(A, B);
         long result = A * B / gcd;
         br.close();
-        bw.write(result + "");
-        bw.flush();
-        bw.close();
+        sb.append(result);
+        System.out.print(sb);
     }
 
     public static long GCD(long a, long b) {
