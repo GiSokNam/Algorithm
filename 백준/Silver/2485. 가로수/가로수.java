@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         int[] tree = new int[N];
@@ -21,9 +21,8 @@ public class Main {
         }
 
         int result = (tree[N-1] - tree[0])/gcd + 1 - tree.length;
-        bw.write(result + "");
-        bw.flush();
-        bw.close();
+        sb.append(result);
+        System.out.print(sb);
     }
     public static int GCD(int a, int b) {
         if (b == 0) {
