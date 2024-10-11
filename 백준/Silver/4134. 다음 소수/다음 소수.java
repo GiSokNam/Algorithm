@@ -4,7 +4,7 @@ import java.math.BigInteger;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         long n = Long.parseLong(br.readLine());
 
@@ -13,15 +13,12 @@ public class Main {
             BigInteger num = new BigInteger(String.valueOf(value));
 
             if (num.isProbablePrime(10)) {
-                bw.write(num + "");
-                bw.newLine();
+                sb.append(num + "\n");
             } else {
-                bw.write(num.nextProbablePrime() + "");
-                bw.newLine();
+                sb.append(num.nextProbablePrime() + "\n");
             }
         }
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
