@@ -3,13 +3,12 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        
+        StringBuilder sb = new StringBuilder();
+
         while (true) {
             int N = Integer.parseInt(br.readLine());
             if (N == 0) {
-                bw.flush();
-                bw.close();
+                System.out.print(sb);
                 break;
             }
             int M = 2 * N;
@@ -31,8 +30,7 @@ public class Main {
                     cnt++;
                 }
             }
-            bw.write(cnt + "");
-            bw.newLine();
+            sb.append(cnt + "\n");
         }
     }
 }
