@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         stack = new int[N];
@@ -26,10 +26,10 @@ public class Main {
             sum += i;
         }
 
-        bw.write(sum + "");
         br.close();
-        bw.flush();
-        bw.close();
+        sb.append(sum);
+        String result = sb.toString();
+        System.out.print(result);
     }
 
     public static void push(int i) {
