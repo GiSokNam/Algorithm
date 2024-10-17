@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         stack = new int[N];
@@ -22,26 +22,22 @@ public class Main {
                     push(Integer.parseInt(st.nextToken()));
                     break;
                 case 2 :
-                    bw.write(pop()+"");
-                    bw.newLine();
+                    sb.append(pop() + "\n");
                     break;
                 case 3 :
-                    bw.write(size() + "");
-                    bw.newLine();
+                    sb.append(size() + "\n");
                     break;
                 case 4 :
-                    bw.write(empty() + "");
-                    bw.newLine();
+                    sb.append(empty() + "\n");
                     break;
                 case 5 :
-                    bw.write(top() + "");
-                    bw.newLine();
+                    sb.append(top() + "\n");
                     break;
             }
         }
         br.close();
-        bw.flush();
-        bw.close();
+        String result = sb.toString();
+        System.out.print(result);
     }
 
     public static void push(int i) {
