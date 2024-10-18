@@ -4,16 +4,15 @@ import java.util.Stack;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int T = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < T; i++) {
-            bw.write(checkVPS(br.readLine()));
-            bw.newLine();
+            sb.append(checkVPS(br.readLine()) + "\n");
         }
         br.close();
-        bw.flush();
-        bw.close();
+        String result = sb.toString();
+        System.out.print(sb);
     }
 
     public static String checkVPS(String str) {
