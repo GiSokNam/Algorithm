@@ -4,7 +4,7 @@ import java.util.Stack;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         String str;
 
@@ -13,13 +13,12 @@ public class Main {
             if (str.equals(".")) {
                 break;
             }
-            bw.write(validation(str));
-            bw.newLine();
+            sb.append(validation(str) + "\n");
         }
 
         br.close();
-        bw.flush();
-        bw.close();
+        String result = sb.toString();
+        System.out.print(sb);
     }
 
     public static String validation(String str) {
