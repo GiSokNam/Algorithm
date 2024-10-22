@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         Deque<Integer> deque = new LinkedList<>();
 
@@ -22,50 +22,41 @@ public class Main {
                 case "pop" :
                     Integer item = deque.poll();
                     if (item == null) {
-                        bw.write("-1");
-                        bw.newLine();
+                        sb.append("-1" + "\n");
                     } else {
-                        bw.write(item + "");
-                        bw.newLine();
+                        sb.append(item + "\n");
                     }
                     break;
                 case "size" :
-                    bw.write(deque.size() + "");
-                    bw.newLine();
+                    sb.append(deque.size() + "\n");
                     break;
                 case "empty" :
                     if (deque.isEmpty()) {
-                        bw.write("1");
-                        bw.newLine();
+                        sb.append("1" + "\n");
                     } else {
-                        bw.write("0");
-                        bw.newLine();
+                        sb.append("0" + "\n");
                     }
                     break;
                 case "front" :
                     Integer front = deque.peek();
                     if (front == null) {
-                        bw.write("-1");
-                        bw.newLine();
+                        sb.append("-1" + "\n");
                     } else {
-                        bw.write(front + "");
-                        bw.newLine();
+                        sb.append(front + "\n");
                     }
                     break;
                 case "back" :
                     Integer back = deque.peekLast();
                     if (back == null) {
-                        bw.write("-1");
-                        bw.newLine();
+                        sb.append("-1" + "\n");
                     } else {
-                        bw.write(back + "");
-                        bw.newLine();
+                        sb.append(back + "\n");
                     }
                     break;
             }
         }
         br.close();
-        bw.flush();
-        bw.close();
+        String result = sb.toString();
+        System.out.print(result);
     }
 }
