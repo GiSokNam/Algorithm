@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         Queue<Integer> queue = new LinkedList<>();
 
@@ -18,10 +18,10 @@ public class Main {
             queue.poll();
             queue.offer(queue.poll());
         }
-
-        bw.write(queue.poll() + "");
+        
         br.close();
-        bw.flush();
-        bw.close();
+        sb.append(queue.poll());
+        String result = sb.toString();
+        System.out.print(result);
     }
 }
