@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         Deque<int[]> deque = new ArrayDeque<>();
         int[] num = new int[N];
@@ -27,7 +27,7 @@ public class Main {
             int number = deque.peek()[1];
 
             if (idx == 1) {
-                bw.write(deque.remove()[0] + " ");
+                sb.append(deque.remove()[0] + " ");
 
                 if (number > 0) {
                     number -= 1;
@@ -40,7 +40,7 @@ public class Main {
                     }
                 }
             } else {
-                bw.write(deque.remove()[0] + " ");
+                sb.append(deque.remove()[0] + " ");
                 if (deque.size() == 0) {
                     break;
                 }
@@ -58,7 +58,6 @@ public class Main {
             }
 
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
