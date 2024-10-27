@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         int[] typeArr = new int[N];
@@ -34,9 +34,8 @@ public class Main {
         while (M-- > 0) {
             int moveValue = Integer.parseInt(st.nextToken());
             deque.addFirst(moveValue);
-            bw.write(deque.pollLast() + " ");
+            sb.append(deque.pollLast() + " ");
         }
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
