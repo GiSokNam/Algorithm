@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int T = Integer.parseInt(br.readLine());
 
         StringTokenizer st;
@@ -14,12 +14,10 @@ public class Main {
             st = new StringTokenizer(br.readLine(), " ");
             N = Long.parseLong(st.nextToken());
             M = Long.parseLong(st.nextToken());
-            bw.write(factorial(M,N)+ "");
-            bw.newLine();
+            sb.append(factorial(M, N) + "\n");
         }
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 
     static long factorial(long M, long N) {
