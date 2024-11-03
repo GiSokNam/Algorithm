@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         Set<String> set = new HashSet<>();
         set.add("ChongChong");
@@ -24,8 +24,7 @@ public class Main {
         }
 
         br.close();
-        bw.write(set.size() + "");
-        bw.flush();
-        bw.close();
+        sb.append(set.size());
+        System.out.print(sb);
     }
 }
