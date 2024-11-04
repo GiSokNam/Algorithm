@@ -1,10 +1,10 @@
 import java.io.*;
-import java.util.*;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         long[] numbers = new long[N];
 
@@ -31,7 +31,7 @@ public class Main {
             if (numbers[i] == numbers[i + 1]) {
                 cnt++;
             } else {
-                cnt = 0;
+                cnt = 0L;
             }
 
             if (max < cnt) {
@@ -46,14 +46,11 @@ public class Main {
 
         long differ = Math.abs(numbers[numbers.length - 1] - numbers[0]);
 
-        bw.write(avg + "");
-        bw.newLine();
-        bw.write(mid + "");
-        bw.newLine();
-        bw.write(frequency + "");
-        bw.newLine();
-        bw.write(differ + "");;
-        bw.flush();
-        bw.close();
+        sb.append(avg + "\n");
+        sb.append(mid + "\n");
+        sb.append(frequency + "\n");
+        sb.append(differ);
+
+        System.out.print(sb);
     }
 }
