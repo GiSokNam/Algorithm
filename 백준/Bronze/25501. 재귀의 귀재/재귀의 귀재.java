@@ -4,18 +4,16 @@ public class Main {
     static int cnt;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         for (int i = 0; i < N; i++) {
             cnt = 0;
             int palindrome = isPalindrome(br.readLine());
-            bw.write(palindrome + " " + cnt) ;
-            bw.newLine();
+            sb.append(palindrome + " " + cnt + "\n");
         }
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 
     public static int recursion(String s, int l, int r) {
