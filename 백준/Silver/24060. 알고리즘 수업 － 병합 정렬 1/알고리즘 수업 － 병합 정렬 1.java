@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
         int N = Integer.parseInt(st.nextToken());
@@ -25,10 +25,8 @@ public class Main {
         br.close();
 
         merge_sort(A, 0, N - 1);
-
-        bw.write(result + "");
-        bw.flush();
-        bw.close();
+        sb.append(result);
+        System.out.print(sb);
     }
 
     static void merge_sort(int A[], int low, int high){
