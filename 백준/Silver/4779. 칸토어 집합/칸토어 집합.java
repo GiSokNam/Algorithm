@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         String str;
         int N;
@@ -23,18 +23,16 @@ public class Main {
             divide(0, len);
 
             for (int i = 0; i < lineArr.length; i++) {
-                bw.write(lineArr[i]+"");
+                sb.append(lineArr[i]);
             }
-
-            bw.newLine();
-            bw.flush();
+            sb.append("\n");
         }
         br.close();
-        bw.close();
+        System.out.print(sb);
     }
 
     static void divide(int start, int length) {
-        
+
         if(length <= 1){
             return;
         }
