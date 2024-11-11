@@ -5,8 +5,7 @@ public class Main {
 
     public static int[] arr;
     public static boolean[] visit;
-
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,16 +18,15 @@ public class Main {
         visit = new boolean[N];
         dfs(N, M, 0);
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 
     private static void dfs(int N, int M, int depth) throws IOException {
         if (depth == M) {
             for (int i : arr) {
-                bw.write(i+" ");
+                sb.append(i + " ");
             }
-            bw.newLine();
+            sb.append("\n");
             return;
         }
 
