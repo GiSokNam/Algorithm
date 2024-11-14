@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 public class Main {
 
     static int[][] arr = new int[9][9];
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -33,12 +33,11 @@ public class Main {
         if (row == 9) {
             for (int i = 0; i < 9; i++) {
                 for (int j = 0; j < 9; j++) {
-                    bw.write(arr[i][j] + " ");
+                    sb.append(arr[i][j] + " ");
                 }
-                bw.newLine();
+                sb.append("\n");
             }
-            bw.flush();
-            bw.close();
+            System.out.print(sb);
             System.exit(0);
         }
 
