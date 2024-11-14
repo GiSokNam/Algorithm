@@ -5,7 +5,7 @@ public class Main {
 
     public static int[] arr;
     public static int N, M;
-    public static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    public static StringBuilder sb = new StringBuilder(); 
 
     public static void main(String[] args) throws IOException {
 
@@ -19,17 +19,16 @@ public class Main {
 
         dfs(1, 0);
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 
     public static void dfs(int at, int depth) throws IOException {
 
         if (depth == M) {
             for (int i : arr) {
-                bw.write(i + " ");
+                sb.append(i + " ");
             }
-            bw.newLine();
+            sb.append("\n");
             return;
         }
 
