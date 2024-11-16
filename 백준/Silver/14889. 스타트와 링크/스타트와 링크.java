@@ -7,7 +7,8 @@ public class Main {
     static int[][] board;
     static StringTokenizer st;
     static int MIN_RESULT = Integer.MAX_VALUE;
-    static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
 
@@ -27,9 +28,8 @@ public class Main {
 
         solution(0, 1);
         br.close();
-        bw.write(MIN_RESULT + "");
-        bw.flush();
-        bw.close();
+        sb.append(MIN_RESULT);
+        System.out.print(sb);
 
     }
 
