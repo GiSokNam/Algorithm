@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st;
 
         while (true) {
@@ -18,13 +18,11 @@ public class Main {
                 break;
             }
             int result = w(a, b, c);
-            bw.write("w(" + a + ", " + b + ", " + c + ")" + " = " + result);
-            bw.newLine();
+            sb.append("w(" + a + ", " + b + ", " + c + ")" + " = " + result + "\n");
         }
 
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 
     private static int w(int a, int b, int c) {
