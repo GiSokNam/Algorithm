@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         int T = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < T; i++) {
@@ -20,11 +20,9 @@ public class Main {
                 }
             }
 
-            bw.write(dp[N] + "");
-            bw.newLine();
+            sb.append(dp[N] + "\n");
         }
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
