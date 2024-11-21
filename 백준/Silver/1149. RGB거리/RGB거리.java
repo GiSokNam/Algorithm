@@ -1,10 +1,10 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Main{
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         int[][] dp = new int[N + 1][3];
@@ -23,8 +23,7 @@ public class Main {
         br.close();
 
         int result = Math.min(dp[N][0], Math.min(dp[N][1], dp[N][2]));
-        bw.write(result + "");
-        bw.flush();
-        bw.close();
+        sb.append(result);
+        System.out.print(sb);
     }
 }
