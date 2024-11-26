@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         N = Integer.parseInt(br.readLine());
         arr = new int[N];
@@ -31,9 +31,8 @@ public class Main {
             max = Math.max(max, dp[i]);
         }
 
-        bw.write(max + "");
-        bw.flush();
-        bw.close();
+        sb.append(max);
+        System.out.print(sb);
     }
 
     static int circulate(int N) {
