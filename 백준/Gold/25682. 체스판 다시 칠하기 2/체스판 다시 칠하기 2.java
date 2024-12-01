@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
         N = Integer.parseInt(st.nextToken());
@@ -28,9 +28,8 @@ public class Main {
         int min = Math.min(cutChessBoard(prefixSumBlack), cutChessBoard(prefixSumWhite));
 
         br.close();
-        bw.write(min + "");
-        bw.flush();
-        bw.close();
+        sb.append(min);
+        System.out.print(sb);
     }
 
     private static int cutChessBoard(int[][] prefixSum){
@@ -47,10 +46,10 @@ public class Main {
 
     private static int[][] prefixSum(char color){
         int[][] tmp = new int[N + 1][M + 1];
+        int currentValue;
 
         for(int i = 0; i < N; i++){
             for (int j = 0; j < M; j++) {
-                int currentValue = 0;
 
                 if ((i + j) % 2 == 0) {
                     currentValue = chessBoard[i][j] == color ? 0 : 1;
