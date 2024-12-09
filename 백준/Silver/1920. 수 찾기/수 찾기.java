@@ -5,7 +5,8 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
+
 
         int N = Integer.parseInt(br.readLine());
         int[] arr = new int[N];
@@ -24,15 +25,12 @@ public class Main {
             int result = Arrays.binarySearch(arr, checkNum);
 
             if (result < 0) {
-                bw.write(0 + "");
-                bw.newLine();
+                sb.append(0 + "\n");
             } else {
-                bw.write(1 + "");
-                bw.newLine();
+                sb.append(1 + "\n");
             }
         }
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
