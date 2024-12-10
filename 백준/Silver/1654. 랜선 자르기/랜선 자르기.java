@@ -4,7 +4,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
         int K = Integer.parseInt(st.nextToken());
@@ -20,9 +20,8 @@ public class Main {
         long result = binarySearch(line, N, ++max);
 
         br.close();
-        bw.write(result + "");
-        bw.flush();
-        bw.close();
+        sb.append(result);
+        System.out.print(sb);
     }
 
     static long binarySearch(int[] line, int n, long max) {
