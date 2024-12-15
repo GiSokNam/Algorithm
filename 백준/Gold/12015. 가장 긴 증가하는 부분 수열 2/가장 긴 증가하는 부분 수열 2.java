@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
         int[] seq = new int[N];
@@ -39,10 +39,9 @@ public class Main {
                 LIS.set(max, key);
             }
         }
-        
-        bw.write(LIS.size() + "");
-        bw.flush();
-        bw.close();
+
+        sb.append(LIS.size());
+        System.out.print(sb);
     }
 
 }
