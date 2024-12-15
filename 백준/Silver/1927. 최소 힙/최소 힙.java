@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
 
@@ -17,17 +17,14 @@ public class Main {
                 queue.add(num);
             } else {
                 if (!queue.isEmpty()) {
-                    bw.write(queue.poll() + "");
-                    bw.newLine();
+                    sb.append(queue.poll() + "\n");
                 } else {
-                    bw.write(0 + "");
-                    bw.newLine();
+                    sb.append(0 + "\n");
                 }
             }
         }
 
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
