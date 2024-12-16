@@ -4,7 +4,7 @@ import java.util.Stack;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         String str = br.readLine();
         String bomb = br.readLine();
@@ -31,16 +31,14 @@ public class Main {
             }
         }
         if (stack.isEmpty()) {
-            bw.write("FRULA");
-            bw.newLine();
+            sb.append("FRULA" + "\n");
         } else {
             for (Character c : stack) {
-                bw.write(c + "");
+                sb.append(c);
             }
         }
-        
+
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
