@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
         Stack<Integer> stack = new Stack<>();
 
         int N = Integer.parseInt(br.readLine());
@@ -36,10 +36,9 @@ public class Main {
         }
 
         for (int a : ans) {
-            bw.write(a + " ");
+            sb.append(a + " ");
         }
 
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
