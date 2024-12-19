@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringBuilder sb = new StringBuilder();
 
         int N = Integer.parseInt(br.readLine());
 
@@ -26,18 +26,17 @@ public class Main {
 
             if (num == 0) {
                 if (queue.isEmpty()) {
-                    bw.write(0 + "");
+                    sb.append(0);
                 } else {
-                    bw.write(queue.poll() + "");
+                    sb.append(queue.poll());
                 }
-                bw.newLine();
+                sb.append("\n");
             } else {
                 queue.offer(num);
             }
         }
-        
+
         br.close();
-        bw.flush();
-        bw.close();
+        System.out.print(sb);
     }
 }
