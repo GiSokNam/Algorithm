@@ -9,6 +9,6 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         Double a = Double.parseDouble(st.nextToken());
         Double b = Double.parseDouble(st.nextToken());
-        System.out.println(a/b);
+        System.out.print(a/b);
     }
 }
