@@ -7,6 +7,6 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int a = Integer.parseInt(br.readLine());
         int b = a - 543;
-        System.out.println(b);
+        System.out.print(b);
     }
 }
