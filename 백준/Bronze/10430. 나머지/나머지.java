@@ -17,6 +17,6 @@ public class Main {
         d = (a*b)%c;
         System.out.println(d);
         d = ((a%c) * (b%c))%c;
-        System.out.println(d);
+        System.out.print(d);
     }
 }
