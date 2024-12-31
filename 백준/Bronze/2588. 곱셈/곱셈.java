@@ -15,6 +15,6 @@ public class Main {
         System.out.println(aa);
         System.out.println(bb);
         System.out.println(cc);
-        System.out.println((cc*100)+(bb*10)+aa);
+        System.out.print((cc*100)+(bb*10)+aa);
     }
 }
