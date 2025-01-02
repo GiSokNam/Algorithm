@@ -12,6 +12,6 @@ public class Main {
         long b = Long.parseLong(st.nextToken());
         long c = Long.parseLong(st.nextToken());
         long sum = a + b + c;
-        System.out.println(sum);
+        System.out.print(sum);
     }
 }
