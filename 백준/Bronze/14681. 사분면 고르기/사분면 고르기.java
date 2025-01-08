@@ -8,12 +8,12 @@ public class Main {
         Long x = Long.parseLong(br.readLine());
         Long y = Long.parseLong(br.readLine());
         if (x > 0) {
-            if (y > 0) System.out.println("1");
-            else System.out.println("4");
+            if (y > 0) System.out.print("1");
+            else System.out.print("4");
         }
         if (x < 0) {
-            if (y > 0) System.out.println("2");
-            else System.out.println("3");
+            if (y > 0) System.out.print("2");
+            else System.out.print("3");
         }
     }
 }
