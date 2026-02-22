@@ -1,14 +1,17 @@
 class Solution {
-    public String solution(String my_string, int m, int c) {
-        StringBuilder answer = new StringBuilder();
-        
+    public String solution(String myString, int m, int c) {
 
-        int verticalLength = my_string.length() / m;
-        
-        for (int i = 0; i < verticalLength; i++) {
-            answer.append(my_string.charAt(c - 1 + i * m));
+        int length = myString.length();
+        int rowCount = length / m;
+
+        StringBuilder sb = new StringBuilder(rowCount);
+
+        int columnIndex = c - 1;
+
+        for (int i = columnIndex; i < length; i += m) {
+            sb.append(myString.charAt(i));
         }
-        
-        return answer.toString();
+
+        return sb.toString();
     }
 }
