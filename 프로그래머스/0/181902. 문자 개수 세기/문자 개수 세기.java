@@ -1,17 +1,18 @@
-import java.util.Arrays;
-
 class Solution {
-    public int[] solution(String my_string) {
-        int[] count = new int[52];
-        
-        for (char c : my_string.toCharArray()) {
-            if (c >= 'A' && c <= 'Z') {
-                count[c - 'A']++;
-            } else if (c >= 'a' && c <= 'z') {
-                count[26 + c - 'a']++;
+
+    public int[] solution(String myString) {
+        int[] result = new int[52]; 
+
+        for (int i = 0; i < myString.length(); i++) {
+            char ch = myString.charAt(i);
+
+            if (ch >= 'A' && ch <= 'Z') {
+                result[ch - 'A']++;
+            } else {
+                result[ch - 'a' + 26]++;
             }
         }
-        
-        return count;
+
+        return result;
     }
 }
